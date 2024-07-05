@@ -12,7 +12,7 @@ const Comment= require('./CommentModal')
 require('dotenv').config();
 const cors = require('cors');
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'https://atg-world-tawny-seven.vercel.app'
 }));
 app.use(express.json());
 const jwt = require('jsonwebtoken');
