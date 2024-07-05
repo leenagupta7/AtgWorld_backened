@@ -12,7 +12,7 @@ const Comment= require('./CommentModal')
 require('dotenv').config();
 const cors = require('cors');
 app.use(cors({
-    origin: 'https://atg-world-tawny-seven.vercel.app'
+    origin: ['https://atg-world-tawny-seven.vercel.app','http://localhost:5173']
 }));
 app.use(express.json());
 const jwt = require('jsonwebtoken');
@@ -22,9 +22,9 @@ app.use(fileupload({
 }));
 
 cloudinary.config({
-    cloud_name: 'dckp3ubkg',
-    api_key: '954137826352828',
-    api_secret: 'lF3OAF50khe4Qwn4gbhtlm34xns',
+    cloud_name: process.env.cloud_name,
+    api_key: process.env.api_key,
+    api_secret: process.env.api_secret,
 });
 mongoose.connect('mongodb+srv://leenagupta993:A6B7lPfD6SD2zbED@cluster0.dxstxgl.mongodb.net/')
     .then(() => console.log('working'))
